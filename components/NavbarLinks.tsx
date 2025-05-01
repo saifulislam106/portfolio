@@ -22,6 +22,9 @@ export function NavbarLinks() {
         <Link href="#projects">
           <Button className='hover:text-blue-600' variant="ghost">Projects</Button>
         </Link>
+        <Link href="#education">
+          <Button className='hover:text-blue-600' variant="ghost">Education</Button>
+        </Link>
         <Link href="#skills">
           <Button className='hover:text-blue-600' variant="ghost">Skills</Button>
         </Link>
@@ -60,6 +63,9 @@ export function NavbarLinks() {
               Projects
             </Button>
           </Link>
+          <Link href="#education">
+          <Button className='hover:text-blue-600' variant="ghost">Education</Button>
+        </Link>
           <Link href="#skills">
             <Button variant="ghost" className="w-full justify-start hover:text-blue-700">
               Skills

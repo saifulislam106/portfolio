@@ -31,7 +31,7 @@ const Hero = () => (
       {/* Image with gradient overlay */}
       <div className="relative w-full max-w-xs">
         <Image
-          src="/assets/images/image.jpg" // Corrected path
+          src="/assets/images/hero[1].jpg" 
           alt="Hero Image"
           height={400}
           width={400}
