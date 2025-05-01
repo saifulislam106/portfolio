@@ -20,16 +20,16 @@ export function NavbarLinks() {
       {/* Desktop Nav */}
       <div className="hidden md:flex items-center space-x-2">
         <Link href="#projects">
-          <Button variant="ghost">Projects</Button>
+          <Button className='hover:text-blue-600' variant="ghost">Projects</Button>
         </Link>
         <Link href="#skills">
-          <Button variant="ghost">Skills</Button>
+          <Button className='hover:text-blue-600' variant="ghost">Skills</Button>
         </Link>
         <Link href="#resume">
-          <Button variant="ghost">Resume</Button>
+          <Button className='hover:text-blue-600' variant="ghost">Resume</Button>
         </Link>
         <Link href="#contact">
-          <Button>Contact</Button>
+          <Button className='hover:text-blue-600'>Contact</Button>
         </Link>
         {mounted && (
           <Button
@@ -56,22 +56,22 @@ export function NavbarLinks() {
       {menuOpen && (
         <div className="absolute right-4 top-14 z-50 flex flex-col space-y-2 bg-popover p-4 rounded-md shadow-md md:hidden">
           <Link href="#projects">
-            <Button variant="ghost" className="w-full justify-start">
+            <Button  variant="ghost" className="w-full justify-start hover:text-blue-700">
               Projects
             </Button>
           </Link>
           <Link href="#skills">
-            <Button variant="ghost" className="w-full justify-start">
+            <Button variant="ghost" className="w-full justify-start hover:text-blue-700">
               Skills
             </Button>
           </Link>
           <Link href="#resume">
-            <Button variant="ghost" className="w-full justify-start">
+            <Button variant="ghost" className="w-full justify-start hover:text-blue-700">
               Resume
             </Button>
           </Link>
           <Link href="#contact">
-            <Button className="w-full justify-start">Contact</Button>
+            <Button className="w-full justify-start hover:text-blue-700">Contact</Button>
           </Link>
           {mounted && (
             <Button

@@ -36,7 +36,7 @@ export const Navbar = () => {
             Saiful Islam
           </span>
         </div>
-      <NavbarLinks />
+      <NavbarLinks  />
         {/* <div className="space-x-4 flex items-center">
           <Link href="#projects">
             <Button variant="ghost">Projects</Button>
