@@ -6,7 +6,7 @@ const Skills = () => {
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Skills</h2>
         <p className="text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-          Over the past year, I've cultivated a robust skill set while building real-world projects. My background in mathematics also strengthens my logical thinking and problem-solving abilities.
+          Over the past year, I&#39;ve cultivated a robust skill set while building real-world projects. My background in mathematics also strengthens my logical thinking and problem-solving abilities.
         </p>
 
         {/* Technical Skills */}

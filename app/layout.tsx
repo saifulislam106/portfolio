@@ -4,6 +4,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import Footer from "@/components/Footer";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <main className="px-4 sm:px-8 max-w-5xl mx-auto">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 
 const Hero = () => (
-  <section className="mt-12 py-10 flex flex-col md:flex-row items-center justify-between bg-gray-50 dark:bg-gray-900 p-4">
+  <section className="py-24 flex flex-col md:flex-row items-center justify-between bg-gray-50 dark:bg-gray-900 p-4">
     <div className="max-w-lg text-center md:text-left">
       <h1 className="text-4xl font-bold mb-4">
         Hello, I&apos;m{" "}
