@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Sun, Moon, Menu } from "lucide-react";
+import { useTheme } from 'next-themes';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Sun, Moon, Menu } from 'lucide-react';
 
 export function NavbarLinks() {
   const { theme, setTheme } = useTheme();
@@ -45,9 +45,9 @@ export function NavbarLinks() {
         {mounted && (
           <Button
             variant="ghost"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           >
-            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
           </Button>
         )}
       </div>
@@ -65,10 +65,10 @@ export function NavbarLinks() {
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="absolute right-4 top-14 z-50 flex flex-col space-y-2 bg-popover p-4 rounded-md shadow-md md:hidden">
+        <div className="absolute right-4 top-14 z-50 flex flex-col space-y-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 p-4 rounded-md shadow-md md:hidden min-w-[180px]">
           <Link href="#about">
             <Button
-              className="hover:text-blue-600 w-full justify-start"
+              className="w-full justify-start bg-muted hover:bg-muted/80"
               variant="ghost"
             >
               About
@@ -76,38 +76,43 @@ export function NavbarLinks() {
           </Link>
           <Link href="#projects">
             <Button
+              className="w-full justify-start bg-muted hover:bg-muted/80"
               variant="ghost"
-              className="w-full justify-start hover:text-blue-700"
             >
               Projects
             </Button>
           </Link>
           <Link href="#skills">
             <Button
+              className="w-full justify-start bg-muted hover:bg-muted/80"
               variant="ghost"
-              className="w-full justify-start hover:text-blue-700"
             >
               Skills
             </Button>
           </Link>
           <Link href="#education">
-            <Button className="hover:text-blue-600" variant="ghost">
+            <Button
+              className="w-full justify-start bg-muted hover:bg-muted/80"
+              variant="ghost"
+            >
               Education
             </Button>
           </Link>
-
           <Link href="#contact">
-            <Button className="w-full justify-start hover:text-blue-700">
+            <Button
+              className="w-full justify-start bg-muted hover:bg-muted/80"
+              variant="ghost"
+            >
               Contact
             </Button>
           </Link>
           {mounted && (
             <Button
               variant="ghost"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="w-full justify-start"
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="w-full justify-start bg-muted hover:bg-muted/80"
             >
-              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </Button>
           )}
         </div>
