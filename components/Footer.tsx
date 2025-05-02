@@ -18,13 +18,14 @@ const Footer = () => {
           <Link href="#about" className="hover:text-primary transition-colors">About</Link>
           <Link href="#projects" className="hover:text-primary transition-colors">Projects</Link>
           <Link href="#skills" className="hover:text-primary transition-colors">Skills</Link>
+          <Link href="#education" className="hover:text-primary transition-colors">Education</Link>
           <Link href="#contact" className="hover:text-primary transition-colors">Contact</Link>
         </div>
 
         {/* Social Icons */}
         <div className="flex space-x-5 text-xl">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/saifulislam106"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"
@@ -32,7 +33,7 @@ const Footer = () => {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/saiful-islam-s106915/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"
@@ -40,7 +41,7 @@ const Footer = () => {
             <FaLinkedin />
           </a>
           <a
-            href="https://twitter.com/yourusername"
+            href="https://twitter.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"
