@@ -9,7 +9,6 @@ const Hero = () => (
         <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
           Saiful Islam
         </span>
-        
       </h1>
       <p className="text-gray-600 text-base dark:text-gray-300 mb-6">
         A web developer skilled in HTML, CSS, JavaScript, React, Node.js,
@@ -19,11 +18,18 @@ const Hero = () => (
         experiences and solving problems with code. Let’s connect!
       </p>
       <div className="space-x-4">
-        <a href="/resume.pdf" target="_blank">
-          <Button>View Resume</Button>
+        <a href="/assets/Saiful Islam.pdf" target="_blank">
+          <Button className="inline-block text-sm font-medium text-white bg-purple-600 px-4 py-2 rounded-md transition">
+            View Resume
+          </Button>
         </a>
         <a href="#contact">
-          <Button variant="outline">Hire Me</Button>
+          <Button
+            variant="outline"
+            className="inline-block text-sm font-medium text-white bg-purple-600 px-4 py-2 rounded-md transition"
+          >
+            Contact Me
+          </Button>
         </a>
       </div>
     </div>
@@ -31,7 +37,7 @@ const Hero = () => (
       {/* Image with gradient overlay */}
       <div className="relative w-full max-w-xs">
         <Image
-          src="/assets/images/hero[1].jpg" 
+          src="/assets/images/hero[1].jpg"
           alt="Hero Image"
           height={400}
           width={400}

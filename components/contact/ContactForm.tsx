@@ -1,4 +1,3 @@
-// components/ContactForm.tsx
 'use client';
 
 import { useState } from 'react';
@@ -12,10 +11,13 @@ const ContactForm = () => {
     email: '',
     message: '',
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [responseMessage, setResponseMessage] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -42,6 +44,10 @@ const ContactForm = () => {
       setResponseMessage('An error occurred. Please try again later.');
     } finally {
       setIsSubmitting(false);
+      // Clear message after 5 seconds
+      setTimeout(() => {
+        setResponseMessage('');
+      }, 5000);
     }
   };
 
@@ -74,7 +80,7 @@ const ContactForm = () => {
         required
         className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
       ></textarea>
-      
+
       <Button
         type="submit"
         disabled={isSubmitting}
@@ -84,7 +90,9 @@ const ContactForm = () => {
       </Button>
 
       {responseMessage && (
-        <p className="text-sm mt-2 text-center text-green-500 dark:text-green-400">{responseMessage}</p>
+        <p className="text-sm mt-2 text-center text-green-500 dark:text-green-400">
+          {responseMessage}
+        </p>
       )}
     </form>
   );

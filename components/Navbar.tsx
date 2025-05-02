@@ -2,6 +2,7 @@
 
 "use client";
 
+import Link from "next/link";
 import { NavbarLinks } from "./NavbarLinks";
 
 export const Navbar = () => {
@@ -12,9 +13,11 @@ export const Navbar = () => {
       <div className="max-w-5xl mx-auto px-4 flex justify-between items-center">
         
         <div className="text-2xl font-bold tracking-tight text-primary">
-          <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+         <Link href="#about">
+         
+         <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Saiful Islam
-          </span>
+          </span></Link>
         </div>
       <NavbarLinks  />
       </div>

@@ -4,7 +4,7 @@ const Education = () => {
     return (
       <section id="education" className="py-16 bg-white dark:bg-gray-950 px-4 sm:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Education Info</h2>
+          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Educational Info</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-12">
             My academic journey has built a strong foundation in mathematics, logical thinking, and problem-solving — all of which shape my approach to software development.
           </p>
