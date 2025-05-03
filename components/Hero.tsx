@@ -9,9 +9,10 @@ const Hero = () => (
         <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
           Saiful Islam
         </span>
+        <span className="text-2xl">,</span>
       </h1>
-      <p className="text-gray-600 text-base dark:text-gray-300 mb-6">
-        A web developer skilled in HTML, CSS, JavaScript, React, Node.js,
+      <p className="text-gray-800 text-base dark:text-gray-300 mb-6">
+        a <span className="font-bold dark:text-white text-lg ">MERN Stack Developer</span> skilled in HTML, CSS, JavaScript, React, Node.js,
         Next.js, Express, MongoDB, and TypeScript. I enjoy building clean,
         functional websites and applications, and I&apos;m always eager to learn
         new technologies. I&apos;m passionate about creating seamless user

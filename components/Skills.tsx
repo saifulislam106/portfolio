@@ -1,4 +1,4 @@
-// components/Skills.tsx
+
 
 const Skills = () => {
   return (

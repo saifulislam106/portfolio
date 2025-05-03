@@ -1,4 +1,4 @@
-// components/Contact.tsx
+
 import { Mail, Phone, MapPin } from 'lucide-react';
 import ContactForm from './ContactForm';
 
@@ -8,8 +8,8 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold">
-            <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+          <h2 className="">
+            <span className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
               Contact Me
             </span>
           </h2>

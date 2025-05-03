@@ -1,4 +1,4 @@
-// components/Education.tsx
+
 
 const Education = () => {
     return (

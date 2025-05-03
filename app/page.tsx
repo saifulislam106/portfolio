@@ -1,9 +1,10 @@
 
 import Hero from '@/components/Hero';
-import Projects from '@/components/projects/Projects';
+
 import Skills from '@/components/Skills';
 import Contact from '@/components/contact/Contact';
 import Education from '@/components/Education';
+import Projects from '@/components/projects/Projects';
 
 export default function Home() {
   return (

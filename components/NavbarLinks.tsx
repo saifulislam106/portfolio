@@ -20,27 +20,27 @@ export function NavbarLinks() {
       {/* Desktop Nav */}
       <div className="hidden md:flex items-center space-x-2">
         <Link href="#about">
-          <Button className="hover:text-blue-600" variant="ghost">
+          <Button className="hover:text-purple-400" variant="ghost">
             About
           </Button>
         </Link>
         <Link href="#projects">
-          <Button className="hover:text-blue-600" variant="ghost">
+          <Button className="hover:text-purple-400" variant="ghost">
             Projects
           </Button>
         </Link>
         <Link href="#skills">
-          <Button className="hover:text-blue-600" variant="ghost">
+          <Button className="hover:text-purple-400" variant="ghost">
             Skills
           </Button>
         </Link>
         <Link href="#education">
-          <Button className="hover:text-blue-600" variant="ghost">
+          <Button className="hover:text-purple-400" variant="ghost">
             Education
           </Button>
         </Link>
         <Link href="#contact">
-          <Button className="hover:text-blue-600">Contact</Button>
+          <Button className="hover:text-purple-400">Contact</Button>
         </Link>
         {mounted && (
           <Button
@@ -68,7 +68,7 @@ export function NavbarLinks() {
         <div className="absolute right-4 top-14 z-50 flex flex-col space-y-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 p-4 rounded-md shadow-md md:hidden min-w-[180px]">
           <Link href="#about">
             <Button
-              className="w-full justify-start bg-muted hover:bg-muted/80"
+              className="w-full justify-start bg-muted hover:text-purple-400"
               variant="ghost"
             >
               About
@@ -76,7 +76,7 @@ export function NavbarLinks() {
           </Link>
           <Link href="#projects">
             <Button
-              className="w-full justify-start bg-muted hover:bg-muted/80"
+              className="w-full justify-start bg-muted hover:text-purple-400"
               variant="ghost"
             >
               Projects
@@ -84,7 +84,7 @@ export function NavbarLinks() {
           </Link>
           <Link href="#skills">
             <Button
-              className="w-full justify-start bg-muted hover:bg-muted/80"
+              className="w-full justify-start bg-muted hover:text-purple-400"
               variant="ghost"
             >
               Skills
@@ -92,7 +92,7 @@ export function NavbarLinks() {
           </Link>
           <Link href="#education">
             <Button
-              className="w-full justify-start bg-muted hover:bg-muted/80"
+              className="w-full justify-start bg-muted hover:text-purple-400"
               variant="ghost"
             >
               Education
@@ -100,7 +100,7 @@ export function NavbarLinks() {
           </Link>
           <Link href="#contact">
             <Button
-              className="w-full justify-start bg-muted hover:bg-muted/80"
+              className="w-full justify-start bg-muted hover:text-purple-400"
               variant="ghost"
             >
               Contact

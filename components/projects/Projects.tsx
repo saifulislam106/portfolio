@@ -1,101 +1,207 @@
-// components/Projects.tsx
-import { Card, CardContent, CardTitle } from '@/components/ui/card';
-import Image from 'next/image';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
-const projects = [
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
+const projectData = [
   {
-    title: 'TutorLink',
-    description: 'A full-stack tutoring platform with booking, dashboards, and payment integration.',
-    tech: ['Next.js', 'Tailwind', 'ShadCn', 'MongoDB', 'Stripe'],
-    link: 'https://tutor-link-two.vercel.app/',
-    image: '/assets/projectImgs/blogs.png',
-    project_type: 'Team Project',
+    id: 1,
+    title: "Paddy",
+    description:
+      "Paddy is a simple web application that helps farmers manage paddy field activities and track seasonal data efficiently.",
+    technologies: ["JavaScript", "Tailwind", "DOM"],
+    coreFeatures: [
+      "uses raw javaScript and DOM manipulation",
+      "Tailwind CSS for styling",
+      "Responsive design for mobile usage",
+      "Browser local storage support",
+    ],
+    challenges: [
+      "Understanding DOM manipulation without a framework",
+      "Implementing responsiveness using only Tailwind CSS",
+    ],
+    liveLink: "https://saifulislam106.github.io/paddy-re-a6/",
+    image: "/assets/projectImgs/image.png",
+    project_type: "Personal Project",
+    codeLink: "https://github.com/saiful-dev/paddy",
   },
   {
-    title: 'BookStore',
-    description: 'An online bookstore with user authentication and a shopping cart.',
-    tech: ['Next.js', 'Tailwind', 'ShadCn', 'MongoDB', 'Stripe'],
-    link: 'https://book-shop-frontend-vert.vercel.app/',
-    image: '/assets/projectImgs/book-shop.png',
-    project_type: 'Team Project',
+    id: 2,
+    title: "TutorLink",
+    description:
+      "TutorLink is a full-stack tutoring platform that connects students with tutors, offering session booking, dashboards, and secure payments.",
+    technologies: ["Next.js", "Tailwind", "ShadCn", "MongoDB", "Stripe"],
+    coreFeatures: [
+      "Student-tutor booking system",
+      "Tutor and student dashboards",
+      "Secure Stripe payment integration",
+      "Authentication with JWT",
+    ],
+    challenges: [
+      "Handling role-based access in Next.js",
+      "Integrating Stripe checkout securely",
+    ],
+    liveLink: "https://tutor-link-two.vercel.app/",
+    image: "/assets/projectImgs/blogs.png",
+    project_type: "Team Project",
+    codeLink: "https://github.com/saiful-dev/tutorlink",
   },
   {
-    title: 'NestShop',
-  description: 'An e-commerce platform with user authentication and a shopping cart.',
-    tech: ["JavaScript",'Tailwind', "Express" ],
-    link: 'https://nest-shop-client.vercel.app/',
-    image: '/assets/projectImgs/nest.png',
-    project_type: 'Personal Project',
+    id: 3,
+    title: "BookStore",
+    description:
+      "BookStore is an e-commerce application for selling books online, featuring authentication, cart functionality, and product filtering.",
+    technologies: ["Next.js", "Tailwind", "ShadCn", "MongoDB", "Stripe"],
+    coreFeatures: [
+      "User registration/login",
+      "Shopping cart with quantity update",
+      "Book filtering by category and price",
+    ],
+    challenges: [
+      "Implementing persistent cart state",
+      "Improving UX with instant feedback",
+    ],
+    liveLink: "https://book-shop-frontend-vert.vercel.app/",
+    image: "/assets/projectImgs/book-shop.png",
+    project_type: "Team Project",
+    codeLink: "https://github.com/saiful-dev/bookstore",
   },
   {
-    title: 'Paddy',
-  description: 'A simple web application for managing paddy fields.',
-    tech: ["JavaScript",'Tailwind', "DOM" ],
-    link: 'https://saifulislam106.github.io/paddy-re-a6/',
-    image: '/assets/projectImgs/image.png',
-    project_type: 'Personal Project',
+    id: 4,
+    title: "NestShop",
+    description:
+      "NestShop is a full-stack e-commerce site built with the MERN stack, offering users a seamless product browsing and purchasing experience.",
+    technologies: ["JavaScript", "Tailwind", "Express"],
+    coreFeatures: [
+      "Product browsing and search",
+      "User authentication",
+      "Basic cart and order placement",
+    ],
+    challenges: [
+      "Structuring the backend API cleanly",
+      "Managing cart logic in localStorage",
+    ],
+    liveLink: "https://nest-shop-client.vercel.app/",
+    image: "/assets/projectImgs/nest.png",
+    project_type: "Personal Project",
+    codeLink: "https://github.com/saiful-dev/nestshop",
   },
 ];
 
-const Projects = () => (
-  <section id="projects" className="py-16 px-4 md:px-8">
-    <h2 className="text-3xl font-bold mb-10 text-center">Projects</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {projects.map((project) => (
-        <Card
-          key={project.title}
-          className="rounded-2xl shadow-md hover:shadow-lg transition-shadow border border-gray-200"
-        >
-          <CardContent className="p-4">
-            {/* Project Image */}
+const Projects = () => {
+  const [selected, setSelected] = useState<any>(null);
+
+  return (
+    <section id="projects" className="py-16 container">
+      <h2 className="text-3xl font-bold mb-10 text-center">My Projects</h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {projectData.map((project) => (
+          <div
+            key={project.id}
+            className="bg-white dark:bg-[#1e1e1e] rounded-xl border shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col"
+          >
             <Image
-              src={project.image || '/assets/default.png'}
+              src={project.image}
               alt={project.title}
-              width={600}
-              height={300}
-              className="w-full h-52 object-cover rounded-lg mb-4"
+              height={200}
+              width={400}
+              className="object-cover h-48 w-full"
             />
-
-            {/* Title and Project Type inline */}
-            <div className="flex justify-between items-center mb-2">
-              <CardTitle className="text-xl font-semibold">{project.title}</CardTitle>
-              <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium ml-2">
-                {project.project_type}
-              </span>
-            </div>
-
-            {/* Project Description */}
-            <p className="text-sm text-gray-600 mb-4">{project.description}</p>
-
-            {/* Tech Stack Section */}
-            <div className="mb-4">
-              <h4 className="text-lg font-semibold dark:text-gray-400 text-gray-800 mb-2">Using Technology:</h4>
-              <div className="flex flex-wrap gap-4">
-                {project.tech.map((tech, index) => (
-                  <span
-                    key={index}
-                    className=" text-white font-medium px-2 py-1 rounded-full text-xs"
-                  >
-                    {tech}
-                  </span>
-                ))}
+            <div className="p-4 flex flex-col flex-grow">
+              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+              <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                {project.description}
+              </p>
+              <div className="mt-auto">
+                <Button
+                  // variant="outline"
+                  onClick={() => setSelected(project)}
+                  className="w-full bg-purple-600 px-4 py-2 rounded-md text-white hover:bg-purple-700 transition"
+                >
+                  View Details
+                </Button>
               </div>
             </div>
+          </div>
+        ))}
+      </div>
 
-            {/* View Project Button */}
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-sm font-medium text-white bg-purple-600 px-4 py-2 rounded-md transition"
-            >
-              View Project
-            </a>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  </section>
-);
+      <Dialog open={!!selected} onOpenChange={() => setSelected(null)}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-white dark:bg-[#1e1e1e] rounded-xl shadow-lg p-6">
+          {selected && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold mb-2">
+                  {selected.title}
+                </DialogTitle>
+              </DialogHeader>
+              <Image
+                width={800}
+                height={400}
+                src={selected.image}
+                alt={selected.title}
+                className="rounded-md mb-6 object-cover w-full h-60"
+              />
+              <p className="text-base text-gray-800 dark:text-gray-300 mb-4">
+                {selected.description}
+              </p>
+
+              <div className="mb-4">
+                <h4 className="font-semibold text-gray-700 dark:text-gray-200 mb-1">
+                  Core Features:
+                </h4>
+                <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1">
+                  {selected.coreFeatures?.map((feature: string, idx: number) => (
+                    <li key={idx}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mb-4">
+                <h4 className="font-semibold text-gray-700 dark:text-gray-200 mb-1">
+                  Challenges:
+                </h4>
+                <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1">
+                  {selected.challenges?.map((challenge: string, idx: number) => (
+                    <li key={idx}>{challenge}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="text-sm text-muted-foreground mb-4">
+                <strong>Technologies:</strong> {selected.technologies.join(", ")}
+              </div>
+
+              <div className="text-sm text-muted-foreground mb-4">
+                <strong>Project Type:</strong> {selected.project_type}
+              </div>
+
+              <div>
+                <a
+                  href={selected.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="w-full bg-purple-600 px-4 py-2 rounded-md text-white hover:bg-purple-700 transition">Live Site</Button>
+                </a>
+              
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+    </section>
+  );
+};
 
 export default Projects;
