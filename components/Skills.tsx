@@ -1,59 +1,88 @@
+"use client";
 
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import {
+  FaReact,
+  FaNode,
+  FaHtml5,
+  // FaCss3Alt,
+  FaGitAlt,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiJavascript,
+  SiMongodb,
+  SiRedux,
+  SiTypescript,
+  SiNextdotjs,
+  SiExpress,
+  SiZod,
+} from "react-icons/si";
+
+const skills = [
+  { label: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
+  { label: "CSS3 / Tailwind", icon: <SiTailwindcss className="text-cyan-400" /> },
+  { label: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
+  { label: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
+  { label: "React.js", icon: <FaReact className="text-sky-400" /> },
+  { label: "Next.js", icon: <SiNextdotjs className="text-white dark:text-gray-300" /> },
+  { label: "Node.js", icon: <FaNode className="text-green-600" /> },
+  { label: "Express.js", icon: <SiExpress className="text-gray-300" /> },
+  { label: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+  { label: "Redux Toolkit", icon: <SiRedux className="text-purple-500" /> },
+  { label: "Zod", icon: <SiZod className="text-pink-500" /> },
+  { label: "Git & GitHub", icon: <FaGitAlt className="text-orange-600" /> },
+];
 
 const Skills = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth - 5) {
+          scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        }
+      }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section id="skills" className="py-16 bg-gray-50 dark:bg-gray-950 px-4 sm:px-8">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Skills</h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-          Over the past year, I&#39;ve cultivated a robust skill set while building real-world projects. My background in mathematics also strengthens my logical thinking and problem-solving abilities.
-        </p>
+    <section id="skills" className="py-20 bg-background px-4">
+      <div className="max-w-6xl mx-auto text-center">
+        <motion.h2
+          className="text-4xl font-bold text-foreground mb-6"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Skills
+        </motion.h2>
 
-        {/* Technical Skills */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-semibold text-indigo-600 dark:text-indigo-400 mb-4">Technical Skills</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-gray-800 dark:text-gray-100">
-            <SkillBadge label="HTML5" />
-            <SkillBadge label="CSS3 / Tailwind CSS" />
-            <SkillBadge label="JavaScript (ES6+)" />
-            <SkillBadge label="TypeScript" />
-            <SkillBadge label="React.js" />
-            <SkillBadge label="Next.js" />
-            <SkillBadge label="Node.js" />
-            <SkillBadge label="Express.js" />
-            <SkillBadge label="MongoDB" />
-            <SkillBadge label="Mongoose" />
-            <SkillBadge label="Redux Toolkit" />
-            <SkillBadge label="REST API" />
-            <SkillBadge label="JWT / Auth" />
-            <SkillBadge label="Zod / Form Validation" />
-            <SkillBadge label="ShadCn" />
-            <SkillBadge label="Git & GitHub" />
-          </div>
-        </div>
-
-        {/* Soft Skills */}
-        <div>
-          <h3 className="text-2xl font-semibold text-pink-600 dark:text-pink-400 mb-4">Soft Skills</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-gray-700 dark:text-gray-200">
-            <SkillBadge label="Communication" />
-            <SkillBadge label="Team Collaboration" />
-            <SkillBadge label="Adaptability" />
-            <SkillBadge label="Continuous Learning" />
-            <SkillBadge label="Attention to Detail" />
-            <SkillBadge label="Self-Motivation" />
-          </div>
+        <div
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto no-scrollbar py-6 px-2 scroll-smooth"
+        >
+          {skills.map((skill, index) => (
+            <motion.div
+              key={index}
+              className="min-w-[140px] flex-shrink-0 border border-border rounded-2xl bg-muted backdrop-blur-lg p-5 shadow-md text-center hover:scale-105 transition-transform duration-300"
+              initial={{ opacity: 0, scale: 0.85 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+            >
+              <div className="text-4xl mb-2">{skill.icon}</div>
+              <p className="text-sm font-medium text-foreground">{skill.label}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
-
-// Reusable badge component
-const SkillBadge = ({ label }: { label: string }) => (
-  <span className="inline-block bg-gray-200 dark:bg-gray-800 text-sm font-medium px-3 py-1 rounded-xl shadow-sm hover:bg-indigo-100 dark:hover:bg-indigo-800 transition">
-    {label}
-  </span>
-);
 
 export default Skills;

@@ -1,49 +1,70 @@
+"use client";
 
+import { motion } from "framer-motion";
+
+const educationList = [
+  {
+    degree: "M.Sc. in Mathematics",
+    year: "2024 – 2025",
+    institution: "Chattogram College, National University, Bangladesh",
+  },
+  {
+    degree: "B.Sc. in Mathematics",
+    year: "2018 – 2023",
+    institution: "National University, Bangladesh",
+    cgpa: "CGPA: 3.21 (out of 4.00)",
+  },
+ 
+];
 
 const Education = () => {
-    return (
-      <section id="education" className="py-16 bg-white dark:bg-gray-950 px-4 sm:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Educational Info</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-12">
-            My academic journey has built a strong foundation in mathematics, logical thinking, and problem-solving — all of which shape my approach to software development.
+  return (
+    <section id="education" className="py-20 px-4 sm:px-8 bg-background">
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl font-bold text-foreground mb-4">Educational Info</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            My academic journey has built a strong foundation in mathematics, logical thinking,
+            and problem-solving — all of which shape my approach to software development.
           </p>
-  
-          <div className="space-y-6 text-left">
-            {/* MSc */}
-            <div className="border-l-4 border-indigo-500 pl-4">
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
-                M.Sc. in Mathematics <span className="text-sm text-indigo-500">(2024 – 2025)</span>
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Chattogram College, National University, Bangladesh
-              </p>
-            </div>
-  
-            {/* BSc */}
-            <div className="border-l-4 border-indigo-500 pl-4">
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
-                B.Sc. in Mathematics <span className="text-sm text-indigo-500">(2018 – 2023)</span>
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Satkania Govt. College, National University, Bangladesh
-              </p>
-              <p className="text-sm mt-1 text-gray-500 dark:text-gray-400">CGPA: 3.21 (out of 4.00)</p>
-            </div>
-            {/* Hsc  */}
-            <div className="border-l-4 border-indigo-500 pl-4">
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
-                HSC (Higher Secondary Certificate)<span className="text-sm text-indigo-500">(2015 – 2017)</span>
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Chattagram Biggan College
-              </p>     
-            </div>
-          </div>
+        </motion.div>
+
+        {/* Timeline */}
+        <div className="relative border-l-2 border-indigo-500 pl-6 space-y-12">
+          {educationList.map((edu, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.2, duration: 0.6 }}
+              className="relative"
+            >
+              {/* Dot */}
+              <span className="absolute -left-[11px] top-1.5 w-5 h-5 bg-indigo-500 border-4 border-background dark:border-gray-950 rounded-full shadow-md animate-pulse" />
+
+              {/* Content */}
+              <div className="bg-muted rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
+                <h3 className="text-xl font-semibold text-foreground">
+                  {edu.degree}{" "}
+                  <span className="text-sm text-indigo-500">({edu.year})</span>
+                </h3>
+                <p className="text-muted-foreground">{edu.institution}</p>
+                {edu.cgpa && (
+                  <p className="text-sm mt-1 text-muted-foreground">{edu.cgpa}</p>
+                )}
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
-    );
-  };
-  
-  export default Education;
-  
+      </div>
+    </section>
+  );
+};
+
+export default Education;

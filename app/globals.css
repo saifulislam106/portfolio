@@ -66,3 +66,25 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes border-glow {
+  0%, 100% {
+    box-shadow: 0 0 4px #a855f7, 0 0 8px #a855f7, 0 0 12px #a855f7;
+  }
+  50% {
+    box-shadow: 0 0 8px #c084fc, 0 0 16px #c084fc, 0 0 24px #c084fc;
+  }
+}
+.animate-border-glow {
+  animation: border-glow 2s infinite ease-in-out;
+}
+
+/* globals.css */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
