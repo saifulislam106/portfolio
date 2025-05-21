@@ -42,7 +42,7 @@ const Hero = () => {
 
         {/* Buttons with Dynamic Border Animation */}
         <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-          <a href="/assets/Saiful Islam.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="./assets/Saiful Islam's Resume.pdf" target="_blank" rel="noopener noreferrer">
             <button className="relative group inline-flex items-center justify-center px-6 py-2 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-purple-600 rounded-md shadow-md hover:shadow-purple-500/50">
               <span className="absolute inset-0 flex items-center justify-center w-full h-full text-purple-600 duration-300 -translate-x-full bg-white group-hover:translate-x-0 ease">
                 View Resume
@@ -87,6 +87,7 @@ const Hero = () => {
           </div>
         </div>
       </motion.div>
+      
     </section>
   );
 };
