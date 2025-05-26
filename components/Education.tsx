@@ -19,8 +19,8 @@ const educationList = [
 
 const Education = () => {
   return (
-    <section id="education" className="py-20 px-4 sm:px-8 bg-background">
-      <div className="max-w-4xl mx-auto">
+    <section id="education" className="py-20 px-2 max-w-5xl mx-auto bg-background">
+      <div>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

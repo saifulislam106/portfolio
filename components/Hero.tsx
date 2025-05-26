@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 flex flex-col-reverse md:flex-row items-center justify-between bg-gray-50 dark:bg-gray-950 overflow-hidden">
+    <section className="bg-gray-50 dark:bg-gray-950">
+      <div className="py-24 px-2 max-w-5xl mx-auto  flex flex-col-reverse md:flex-row items-center justify-between  overflow-hidden">
       {/* Left Text Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -47,7 +48,7 @@ const Hero = () => {
               <span className="absolute inset-0 flex items-center justify-center w-full h-full text-purple-600 duration-300 -translate-x-full bg-white group-hover:translate-x-0 ease">
                 View Resume
               </span>
-              <span className="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-x-full ease">
+              <span className="absolute flex items-center justify-center w-full h-full text-black dark:text-white transition-all duration-300 transform group-hover:translate-x-full ease">
                 View Resume
               </span>
               <span className="relative invisible">View Resume</span>
@@ -88,6 +89,7 @@ const Hero = () => {
         </div>
       </motion.div>
       
+    </div>
     </section>
   );
 };

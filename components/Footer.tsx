@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 const Footer = () => {
   return (
     <footer className="bg-background border-t border-border text-muted-foreground py-10 mt-24">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="max-w-5xl mx-auto px-2 flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Portfolio Name with Gradient */}
         <div className="text-xl font-bold">
           <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">

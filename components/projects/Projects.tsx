@@ -15,24 +15,23 @@ import {
 const projectData = [
   {
     id: 1,
-    title: "Paddy",
+    title: "BookStore",
     description:
-      "Paddy is a simple web application that helps farmers manage paddy field activities and track seasonal data efficiently.",
-    technologies: ["JavaScript", "Tailwind", "DOM"],
+      "BookStore is an e-commerce application for selling books online, featuring authentication, cart functionality, and product filtering.",
+    technologies: ["Next.js", "Tailwind", "ShadCn", "MongoDB", "Stripe"],
     coreFeatures: [
-      "uses raw javaScript and DOM manipulation",
-      "Tailwind CSS for styling",
-      "Responsive design for mobile usage",
-      "Browser local storage support",
+      "User registration/login",
+      "Shopping cart with quantity update",
+      "Book filtering by category and price",
     ],
     challenges: [
-      "Understanding DOM manipulation without a framework",
-      "Implementing responsiveness using only Tailwind CSS",
+      "Implementing persistent cart state",
+      "Improving UX with instant feedback",
     ],
-    liveLink: "https://saifulislam106.github.io/paddy-re-a6/",
-    image: "/assets/projectImgs/image.png",
-    project_type: "Personal Project",
-    codeLink: "https://github.com/saiful-dev/paddy",
+    liveLink: "https://book-shop-frontend-one.vercel.app/",
+    image: "/assets/projectImgs/book-shop.png",
+    project_type: "Team Project",
+    codeLink: "https://github.com/saiful-dev/bookstore",
   },
   {
     id: 2,
@@ -57,24 +56,26 @@ const projectData = [
   },
   {
     id: 3,
-    title: "BookStore",
+    title: "Paddy",
     description:
-      "BookStore is an e-commerce application for selling books online, featuring authentication, cart functionality, and product filtering.",
-    technologies: ["Next.js", "Tailwind", "ShadCn", "MongoDB", "Stripe"],
+      "Paddy is a simple web application that helps farmers manage paddy field activities and track seasonal data efficiently.",
+    technologies: ["JavaScript", "Tailwind", "DOM"],
     coreFeatures: [
-      "User registration/login",
-      "Shopping cart with quantity update",
-      "Book filtering by category and price",
+      "uses raw javaScript and DOM manipulation",
+      "Tailwind CSS for styling",
+      "Responsive design for mobile usage",
+      "Browser local storage support",
     ],
     challenges: [
-      "Implementing persistent cart state",
-      "Improving UX with instant feedback",
+      "Understanding DOM manipulation without a framework",
+      "Implementing responsiveness using only Tailwind CSS",
     ],
-    liveLink: "https://book-shop-frontend-one.vercel.app/",
-    image: "/assets/projectImgs/book-shop.png",
-    project_type: "Team Project",
-    codeLink: "https://github.com/saiful-dev/bookstore",
+    liveLink: "https://saifulislam106.github.io/paddy-re-a6/",
+    image: "/assets/projectImgs/image.png",
+    project_type: "Personal Project",
+    codeLink: "https://github.com/saiful-dev/paddy",
   },
+  
   {
     id: 4,
     title: "NestShop",
@@ -101,14 +102,14 @@ const Projects = () => {
   const [selected, setSelected] = useState<any>(null);
 
   return (
-    <section id="projects" className="py-16 container">
+    <section id="projects" className="py-20 px-2 max-w-5xl mx-auto">
       <h2 className="text-3xl font-bold mb-10 text-center">My Projects</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
         {projectData.map((project) => (
           <div
             key={project.id}
-            className="bg-white dark:bg-[#1e1e1e] rounded-xl border shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col"
+            className="bg-white dark:bg-[#1e1e1e] rounded-xl border border-none shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col"
           >
             <Image
               src={project.image}
